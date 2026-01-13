@@ -217,6 +217,11 @@ class AspirationResource extends Resource
                             ->label('Komentar Diaktifkan')
                             ->default(1)
                             ->inline()
+                            ->required(),
+                        Toggle::make('display_to_banner')
+                            ->label('Tampilkan di Banner Utama (Limit 8 berita)')
+                            ->default(0)
+                            ->inline()
                             ->required()
                     ])
                     ->columns(1)
@@ -242,6 +247,11 @@ class AspirationResource extends Resource
 
                 ToggleColumn::make('comments_enabled')
                     ->label('Komentar Diaktifkan')
+                    ->sortable()
+                    ->toggleable(),
+
+                ToggleColumn::make('display_to_banner')
+                    ->label('Tampilkan di Banner')
                     ->sortable()
                     ->toggleable(),
 
@@ -296,7 +306,14 @@ class AspirationResource extends Resource
                         'Blog' => 'Blog',
                         'Aspirasi' => 'Aspirasi',
                     ])
-                    ->native(false)
+                    ->native(false),
+                SelectFilter::make('display_to_banner')
+                    ->label('Ditampilkan di Banner')
+                    ->options([
+                        '0' => 'Tidak',
+                        '1' => 'Ya',
+                    ])
+                    ->native(false),
             ])
             ->actions([
                 ActionGroup::make([

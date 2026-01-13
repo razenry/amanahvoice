@@ -3,7 +3,7 @@
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="{{ route('home') }}" class="flex items-center">
                 <img src="{{ asset($settings?->icon ? 'storage/' . $settings?->icon : 'logo.png') }}" class="mr-3 h-12 "
-                    alt="Flowbite Logo" />
+                    alt="Amanah Voice" />
                 <span
                     class="self-center text-md md:text-xl font-bold md:font-semibold whitespace-nowrap dark:text-white">{{ $settings->name ?? 'Amanah Voice' }}</span>
             </a>

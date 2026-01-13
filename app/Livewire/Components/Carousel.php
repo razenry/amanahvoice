@@ -13,7 +13,7 @@ class Carousel extends Component
     public function render()
     {
         return view('livewire.components.carousel', [
-            'slides' => Aspiration::withoutTrashed()->where('published', '!=', 0)->where('type', '!=', 'Aspirasi')->limit($this->paginate)->orderBy('views', 'DESC')->get()
+            'slides' => Aspiration::withoutTrashed()->where('display_to_banner', true)->where('published', '!=', 0)->where('type', '!=', 'Aspirasi')->limit($this->paginate)->orderBy('views', 'DESC')->get()
         ]);
     }
 }

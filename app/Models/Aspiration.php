@@ -23,6 +23,7 @@ class Aspiration extends Model
         'type',
         'published',
         'comments_enabled',
+        'display_to_banner',
         'user_id',
         'category_id',
         'unit_id',
@@ -30,6 +31,7 @@ class Aspiration extends Model
 
     protected $casts = [
         'comments_enabled' => 'boolean',
+        'display_to_banner' => 'boolean',
         'published' => 'boolean',
         'type' => AspirationType::class,
         'tags' => 'array',
@@ -70,5 +72,6 @@ class Aspiration extends Model
     {
         return $this->hasMany(CommentAspiration::class);
     }
+
 
 }
